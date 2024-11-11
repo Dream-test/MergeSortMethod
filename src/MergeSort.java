@@ -1,8 +1,11 @@
 import java.util.Arrays;
 
 public class MergeSort {
+    public int[] sort(int[] arrayToSort) {
+        return split(arrayToSort);
+    }
 
-    public static int[] split(int[] arrayToSort) {
+    private int[] split(int[] arrayToSort) {
         if (arrayToSort.length < 2) return arrayToSort;
         else {
             int mid = arrayToSort.length / 2;
@@ -16,7 +19,7 @@ public class MergeSort {
         }
     }
 
-    private static int[] mergeArray(int[] left, int[] right) {
+    private int[] mergeArray(int[] left, int[] right) {
         int[] merged = new int[left.length + right.length];
         int i = 0, j = 0, k = 0;
         while (i < left.length && j < right.length) {
