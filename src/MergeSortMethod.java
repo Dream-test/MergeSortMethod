@@ -49,7 +49,7 @@ public class MergeSortMethod {
 
     }
 
-    private static int characterCount (int[] arrayToSort) {
+    public static int characterCount (int[] arrayToSort) {
         StringBuilder lengthArrayToSort = new StringBuilder();
         for (int number : arrayToSort) {
             lengthArrayToSort.append(number).append(",").append(" ");
@@ -75,7 +75,7 @@ public class MergeSortMethod {
         }
     }
 
-    private static void add(int toAdd) {
+    public static void add(int toAdd) {
         int requiredSize = size + 1;
         if (!canAdd(requiredSize)) { // проверяет выход на максимальный размер массива, при превышении возвращает false
             throw new OutOfMemoryError("Limit arrays elements");
@@ -90,6 +90,14 @@ public class MergeSortMethod {
             size++;
         }
 
+    }
+
+    public static int getAdded() {
+        return secondArrayToSort[size - 1];
+    }
+
+    public static int getSize() {
+        return size;
     }
 
     private static boolean canAdd(int requiredSize) { //проверяет не достиг ли необходимый минимум массива максимально возможного значения
