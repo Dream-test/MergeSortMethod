@@ -6,15 +6,18 @@ public class MergeSort {
     }
 
     private int[] split(int[] arrayToSort) {
+        if (arrayToSort.length == 0) {
+            throw new IllegalArgumentException("Array length must be greater than 0");
+        }
         if (arrayToSort.length < 2) return arrayToSort;
         else {
             int mid = arrayToSort.length / 2;
-            int[] left = Arrays.copyOfRange(arrayToSort, 0, mid);
-            int[] right = Arrays.copyOfRange(arrayToSort, mid, arrayToSort.length);
+            int[] leftArray = Arrays.copyOfRange(arrayToSort, 0, mid);
+            int[] rightArray = Arrays.copyOfRange(arrayToSort, mid, arrayToSort.length);
 
-            left = split(left);
-            right = split(right);
-            arrayToSort = mergeArray(left, right);
+            leftArray = split(leftArray);
+            rightArray = split(rightArray);
+            arrayToSort = mergeArray(leftArray, rightArray);
             return arrayToSort;
         }
     }
