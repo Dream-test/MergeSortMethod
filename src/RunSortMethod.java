@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class MergeSortMethod {
+public class RunSortMethod {
     private final static int DEFAULT_CAPACITY = 2;
     private final static int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
     private static int[] secondArrayToSort = new int[DEFAULT_CAPACITY];
