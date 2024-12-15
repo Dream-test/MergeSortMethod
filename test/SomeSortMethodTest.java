@@ -30,10 +30,21 @@ public class SomeSortMethodTest {
     }
 
     @Test
-    public void sortArray_whenFive() {
+    public void sortArrayByMergeSort_whenFive() {
         int[] toSort = {5, 4, 1, 3, 2};
         int[] expectedResult = {1, 2, 3, 4, 5};
         MergeSort sorted = new MergeSort();
+        int[] result = sorted.sort(toSort);
+        for (int i = 0; i < toSort.length; i++) {
+            Assertions.assertEquals(expectedResult[i], result[i]);
+        }
+    }
+
+    @Test
+    public void sortArrayByInsertSort_whenFive() {
+        int[] toSort = {5, 4, 1, 3, 2};
+        int[] expectedResult = {1, 2, 3, 4, 5};
+        InsertionSort sorted = new InsertionSort();
         int[] result = sorted.sort(toSort);
         for (int i = 0; i < toSort.length; i++) {
             Assertions.assertEquals(expectedResult[i], result[i]);
