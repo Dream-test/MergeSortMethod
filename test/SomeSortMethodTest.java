@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MergeSortMethodTest {
+public class SomeSortMethodTest {
     @Test
     public void characterCount_whenThree() {
         int[] toAdd = {1, 2, 3};
-        int result = MergeSortMethod.characterCount(toAdd);
+        int result = RunSortMethod.characterCount(toAdd);
         Assertions.assertEquals(9, result);
 
     }
@@ -13,19 +13,19 @@ public class MergeSortMethodTest {
     @Test
     public void add_fiveNumbers() {
         int toAdd = 5;
-        int oldSize = MergeSortMethod.getSize();
+        int oldSize = RunSortMethod.getSize();
         for (int i = 0; i < toAdd; i++) {
-            MergeSortMethod.add(i);
+            RunSortMethod.add(i);
         }
-        int result = MergeSortMethod.getSize() - oldSize;
+        int result = RunSortMethod.getSize() - oldSize;
         Assertions.assertEquals(5, result);
     }
 
     @Test
     public void addNumberFive() {
         int toAdd = 5;
-        MergeSortMethod.add(toAdd);
-        int result = MergeSortMethod.getAdded();
+        RunSortMethod.add(toAdd);
+        int result = RunSortMethod.getAdded();
         Assertions.assertEquals(5, result);
     }
 
@@ -39,5 +39,4 @@ public class MergeSortMethodTest {
             Assertions.assertEquals(expectedResult[i], result[i]);
         }
     }
-
 }
