@@ -14,8 +14,8 @@ public class RunSortMethod {
 
         Scanner in = new Scanner(System.in);
         int[] arrayToSort;
-        String boundString;
         int bound;
+
         System.out.println("Enter the number of elements in the array");
         while (true) {
             String input = in.nextLine();
@@ -34,8 +34,10 @@ public class RunSortMethod {
         int space = Math.max(characterCount(arrayToSort), 37); // нахожу количество знаков в преобразованном в строку массиве для отделения
         System.out.println("Array to sort is: " + Arrays.toString(arrayToSort));
         printSpace(space); // отделяю массивы подчеркиванием
-        MergeSort sorting = new MergeSort();
-        System.out.println("Sorted array:      " + Arrays.toString(sorting.sort(arrayToSort)));
+
+        //MergeSort sorting = new MergeSort();
+        InsertionSort iSorting = new InsertionSort();
+        System.out.println("Sorted array:      " + Arrays.toString(iSorting.sort(arrayToSort)));
         printSpace(space);
         System.out.println("Create new array of " + bound + " random numbers");
         newRandomArrayToSort(bound); // формирую новый массив случайных чисел используя метод add() для динамического массива
@@ -43,7 +45,27 @@ public class RunSortMethod {
         System.out.print("New array to sort is: ");
         print(secondArrayToSort);
         printSpace(space);
-        int[] secondSortedArray = sorting.sort(secondArrayToSort);
+        int[] secondSortedArray = iSorting.sort(secondArrayToSort);
+        System.out.print("Sorted second array: ");
+        print(secondSortedArray);
+
+        printSpace(space);
+        arrayToSort = generator.randomArray(bound);
+        System.out.println("Array to sort is: " + Arrays.toString(arrayToSort));
+        printSpace(space);
+        MergeSort mSorting = new MergeSort();
+        //InsertionSort sorting = new InsertionSort();
+        System.out.println("Sorted array:      " + Arrays.toString(mSorting.sort(arrayToSort)));
+        printSpace(space);
+        System.out.println("Create new array of " + bound + " random numbers");
+        //System.out.println("Bound= " + bound);
+        size = 0;
+        newRandomArrayToSort(bound); // формирую новый массив случайных чисел используя метод add() для динамического массива
+        secondArrayToSort = Arrays.copyOf(secondArrayToSort, size); // убираю незаполненные элементы массива
+        System.out.print("New array to sort is: ");
+        print(secondArrayToSort);
+        printSpace(space);
+        secondSortedArray = mSorting.sort(secondArrayToSort);
         System.out.print("Sorted second array: ");
         print(secondSortedArray);
 
@@ -54,8 +76,7 @@ public class RunSortMethod {
         for (int number : arrayToSort) {
             lengthArrayToSort.append(number).append(",").append(" ");
         }
-        int length = lengthArrayToSort.length();
-        return length;
+        return lengthArrayToSort.length();
     }
 
     private static void printSpace(int space) {
