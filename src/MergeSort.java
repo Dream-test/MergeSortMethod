@@ -9,8 +9,9 @@ public class MergeSort {
         if (arrayToSort.length == 0) {
             throw new IllegalArgumentException("Array length must be greater than 0");
         }
-        if (arrayToSort.length < 2) return arrayToSort;
-        else {
+        if (arrayToSort.length < 2) {
+            return arrayToSort;
+        }
             int mid = arrayToSort.length / 2;
             int[] leftArray = Arrays.copyOfRange(arrayToSort, 0, mid);
             int[] rightArray = Arrays.copyOfRange(arrayToSort, mid, arrayToSort.length);
@@ -19,7 +20,6 @@ public class MergeSort {
             rightArray = split(rightArray);
             arrayToSort = mergeArray(leftArray, rightArray);
             return arrayToSort;
-        }
     }
 
     private int[] mergeArray(int[] left, int[] right) {
