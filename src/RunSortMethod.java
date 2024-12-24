@@ -39,6 +39,7 @@ public class RunSortMethod {
         //MergeSort sorting = new MergeSort();
         InsertionSort iSorting = new InsertionSort();
         System.out.println("Sorted array by InsertionSort: " + Arrays.toString(iSorting.sort(arrayToSort)));
+        System.out.println("InsertionSort Execution time: " + iSorting.durationMicro + " μs");
         printSpace(space);
         System.out.println("Create new array of " + bound + " random numbers");
         newRandomArrayToSort(bound); // формирую новый массив случайных чисел используя метод add() для динамического массива
@@ -49,6 +50,7 @@ public class RunSortMethod {
         int[] secondSortedArray = iSorting.sort(secondArrayToSort);
         System.out.print("Sorted second array by InsertionSort: ");
         print(secondSortedArray);
+        System.out.println("InsertionSort Execution time: " + iSorting.durationMicro + " μs");
 
         printSpace(space);
         arrayToSort = generator.randomArray(bound);
