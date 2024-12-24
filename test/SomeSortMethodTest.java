@@ -64,4 +64,16 @@ public class SomeSortMethodTest {
             Assertions.assertEquals(expectedResult[i], result[i]);
         }
     }
+
+    @Test
+    public void sortArrayByGnomeSort_whenFive() {
+        int[] toSort = {5, 4, 1, 3, 2};
+        int[] expectedResult = {1, 2, 3, 4, 5};
+        GnomeSort sorted = new GnomeSort();
+        int[] result = sorted.sort(toSort);
+        //System.out.println(Arrays.toString(result));
+        for (int i = 0; i < toSort.length; i++) {
+            Assertions.assertEquals(expectedResult[i], result[i]);
+        }
+    }
 }
